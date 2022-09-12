@@ -11,7 +11,7 @@
 
     </data>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -24,7 +24,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@={myName.name}"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/et_name"
@@ -33,7 +35,9 @@
             android:layout_height="wrap_content"
             android:hint="@string/name"
             android:text="@={myName.nickname}"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_done"
@@ -41,7 +45,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/layout_margin"
-            android:text="@string/done" />
+            android:text="@string/done"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_name" />
 
         <TextView
             android:id="@+id/tv_text"
@@ -50,11 +57,15 @@
             android:layout_height="wrap_content"
             android:text="@={myName.nickname}"
             android:textAlignment="center"
-            android:visibility="gone" />
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name" />
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_done">
 
             <TextView
                 android:id="@+id/tv_content"
@@ -65,5 +76,5 @@
                 android:text="@string/scrollview" />
         </ScrollView>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
