@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">HouseParty</string>
+    <string name="kim_su_been">Kim Su been</string>
+    <string name="name">what is your nickname?</string>
+    <string name="scrollview">scrollviewscrollviewscrollviewscrollviewscrollviewscrollviewscrollviewscrollview</string>
+    <string name="done">Done</string>
 </resources>
