@@ -1,7 +1,12 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+// Adding the apply plugin statement for safeargs
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+
 }
+
 
 android {
     compileSdk 32
@@ -49,5 +54,11 @@ dependencies {
     //navigation graph
     implementation "android.arch.navigation:navigation-fragment-ktx:1.0.0"
     implementation "android.arch.navigation:navigation-ui-ktx:1.0.0"
+    //implementation 'androidx.navigation:navigation-fragment-ktx:2.5.2'
+    //implementation 'androidx.navigation:navigation-ui-ktx:2.5.2'
+
+    implementation "android.arch.navigation:navigation-safe-args-gradle-plugin:1.0.0"
+
+
 
 }
