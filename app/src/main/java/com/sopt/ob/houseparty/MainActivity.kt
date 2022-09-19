@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import androidx.core.content.getSystemService
 import androidx.databinding.DataBindingUtil
 import com.sopt.ob.houseparty.databinding.ActivityMainBinding
 
@@ -31,8 +32,8 @@ class MainActivity : AppCompatActivity() {
             view.visibility = View.GONE
             tvName.visibility = View.VISIBLE
         }
-        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.hideSoftInputFromWindow(view.windowToken, 0)
+        val imm = getSystemService<InputMethodManager>()
+        imm?.hideSoftInputFromWindow(view.windowToken, 0)
     }
 
     private fun clickEvent() {

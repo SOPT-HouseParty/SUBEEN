@@ -4,4 +4,7 @@
     <string name="name">what is your nickname?</string>
     <string name="scrollview">scrollviewscrollviewscrollviewscrollviewscrollviewscrollviewscrollviewscrollview</string>
     <string name="done">Done</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="android_question">Android Quiz (%1$d/%2$d)</string>
 </resources>
