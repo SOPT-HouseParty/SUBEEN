@@ -8,15 +8,50 @@
         android:id="@+id/titleFragment"
         android:name="com.sopt.ob.houseparty.TitleFragment"
         android:label="fragment_game"
-        tools:layout="@layout/fragment_game" />
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_titleFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
     <fragment
         android:id="@+id/gameFragment"
         android:name="com.sopt.ob.houseparty.GameFragment"
         android:label="fragment_game"
-        tools:layout="@layout/fragment_game" />
-    <activity
-        android:id="@+id/secondActivity"
-        android:name="com.sopt.ob.houseparty.SecondActivity"
-        android:label="activity_second"
-        tools:layout="@layout/activity_second" />
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_gameFragment_to_gameOverFragment"
+            app:destination="@id/gameOverFragment"
+            app:popUpTo="@id/gameFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_gameFragment_to_gameWonFragment"
+            app:destination="@id/gameWonFragment"
+            app:popUpTo="@id/gameFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameOverFragment"
+        android:name="com.sopt.ob.houseparty.GameOverFragment"
+        android:label="fragment_gameOver"
+        tools:layout="@layout/fragment_game_over" >
+        <action
+            android:id="@+id/action_gameOverFragment_to_gameFragment"
+            app:destination="@id/gameFragment"
+            app:popUpTo="@id/titleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameWonFragment"
+        android:name="com.sopt.ob.houseparty.GameWonFragment"
+        android:label="fragment_gameWon"
+        tools:layout="@layout/fragment_game_won" >
+        <action
+            android:id="@+id/action_gameWonFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <argument
+            android:name="numQuestions"
+            app:argType="integer" />
+        <argument
+            android:name="numCorrect"
+            app:argType="integer" />
+    </fragment>
 </navigation>
